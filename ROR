@@ -1,0 +1,15 @@
+def ROR(N, cl):
+    binN = bin(N)
+    chrBinN = str(binN)[2:]
+    
+    if(len(chrBinN) < 8): chrBinN = '0' * (8 - len(chrBinN)) + chrBinN
+    #print(chrBinN, end = ' -> ')
+
+    chrBinN_Remove = chrBinN[-1:-(cl + 1):-1][::-1]
+    chrBinN_Remain = chrBinN[:8 - cl]
+    chrBinN = chrBinN_Remove + chrBinN_Remain
+    #print(f'{chrBinN} cl = {cl}', end = '\n')
+
+    return int(chrBinN, 2)
+
+#ROR 계산법 몰라서 만든 쓰레기 코드
